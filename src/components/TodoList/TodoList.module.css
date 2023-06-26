@@ -1,0 +1,212 @@
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0 50px 0;
+}
+.list__item{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    align-items: center;
+    width: 100%;
+    border-radius: 12px;
+    padding: 7px 7px 7px 20px;
+    background-color: #5c5c5c;
+    color: white;
+}
+.deleteAnim{
+  animation-name: del;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.list__item #active{
+    background-color: #0e7600;
+}
+#active{
+    background-color: #0e7600;
+}
+.del,.edit{
+    flex-shrink: 0;
+    border: 0;
+    background-color: rgb(228 235 246);
+    border-radius: 7px;
+    width: 30px;
+    height: 25px;
+    color: #5c5c5c;
+    transition: background-color .5s;
+    cursor: pointer;
+}
+.todo__task{
+    margin-right: auto;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+.active{
+    text-decoration: line-through;
+}
+.checkbox{
+    margin-right: 5px;
+}
+.del:active,.edit:active{
+    box-shadow: inset 2px 2px 5px 0px rgb(0 0 0 / 40%),
+    inset -1px -1px 5px 0px rgb(255 255 255 / 50%);
+}
+.del:hover{
+    background-color: #f66e6e;
+}
+.edit:hover{
+    background-color: #e68405;
+}
+.todo__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.removeChecked {
+    border: 0;
+    background-color: #5c5c5c;
+    box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%), -3px -3px 5px 0px rgb(255 255 255 / 70%);
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 11px;
+    transition: background-color .5s;
+}
+.removeChecked:hover{
+    background-color: #3d3c3c;
+}
+.removeChecked:active{
+    box-shadow: inset 2px 2px 5px 0px rgb(0 0 0 / 60%),
+    inset -1px -1px 5px 0px rgb(255 255 255 / 50%);
+}
+
+.container {
+    cursor: pointer;
+  }
+  
+  .container input {
+    display: none;
+  }
+  
+  .container svg {
+    overflow: visible;
+  }
+  
+  .path {
+    fill: none;
+    stroke: white;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+    stroke-dasharray: 241 9999999;
+    stroke-dashoffset: 0;
+  }
+  
+  .container input:checked ~ svg .path {
+    stroke-dasharray: 70.5096664428711 9999999;
+    stroke-dashoffset: -262.2723388671875;
+  }
+  
+  .checkbox {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+  }
+
+  .checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkbox label {
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2.5px solid #ffffff;
+    transition: .2s linear;
+  }
+  .checkbox input:checked ~ .checkmark {
+    background-color: transparent;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 50%;
+    top: 40%;
+    width: 10px;
+    height: 14px;
+    border: 2px solid #0ea021;
+    filter: drop-shadow(0px 0px 10px #0ea021);
+    border-width: 0 2.5px 2.5px 0;
+    transition: .2s linear;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(0.2);
+  }
+  
+  .checkbox input:checked ~ .checkmark:after {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    animation: pulse 1s ease-in;
+  }
+  
+  .checkbox input:checked ~ .checkmark {
+    transform: rotate(45deg);
+    border: none;
+  }
+  
+  .task{
+    margin-left: 10px;
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(0deg) scale(1.4);
+    }
+  }
+  
+  
+
+  
+@keyframes del {
+        40% {
+        opacity: 1;
+        transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);
+        }
+        100% {
+        opacity: 0;
+        transform: scale(.1) translate3d(2000px, 0, 0);
+        transform-origin: right center;
+        }
+    }

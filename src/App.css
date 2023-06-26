@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+body{
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E4EBF6;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #3d3c3c;;
+}
+.active{
+    background-color: #0e7600;
+}
